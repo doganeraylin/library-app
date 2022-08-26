@@ -36,15 +36,11 @@ AddNewBook.prototype.getInput = function() {
         bookForm.classList.remove('open-form');
         bookForm.classList.add('close-form')
 
-        const bookContainer = document.createElement('div');
-        bookContainer.classList.add('book-container')
 
-
-        // !! not working --- create single book container
+        // create single book container
         const singleBookItem = document.createElement ('div');
         singleBookItem.classList.add('single-book-item')
-        bookContainer.appendChild(singleBookItem);
-        
+      
      
         // add book title
         const titleText = document.createElement ('h1');
@@ -64,12 +60,7 @@ AddNewBook.prototype.getInput = function() {
         pageNumber.innerText = pageNumberInput.value;
         pageNumber.classList.add('page-number');
 
-        // create button container
-
-        // const buttonContainer = document.createElement('div');
-        // buttonContainer.appendChild(readButton);
-        // buttonContainer.appendChild(deleteButton);
-
+        
         // add delete button
         const deleteButton = document.createElement('button');
         deleteButton.innerText = 'delete';
