@@ -9,6 +9,7 @@ const pageNumberInput = document.querySelector('#pages')
 const submitButton = document.querySelector('#submit-button')
 const addButton = document.querySelector('#add-button')
 const checkbox = document.querySelector('#checkbox')
+let myLibrary = [];
 
 
 openBookForm();
@@ -21,8 +22,6 @@ function openBookForm () {
 
 }
 
-let myLibrary = [];
-
 // prototype and constructor function
 
 function AddNewBook() {
@@ -32,30 +31,44 @@ AddNewBook.prototype.getInput = function() {
 
     submitButton.addEventListener('click',function(e){
 
-        // e.preventDefault();
 
         // display and hide bookForm
         bookForm.classList.remove('open-form');
         bookForm.classList.add('close-form')
 
-        // create single book container
-        const singleBookItem = document.createElement ('div');
-        bookContainer.appendChild(singleBookItem);
+        const bookContainer = document.createElement('div');
+        bookContainer.classList.add('book-container')
 
+
+        // !! not working --- create single book container
+        const singleBookItem = document.createElement ('div');
+        singleBookItem.classList.add('single-book-item')
+        bookContainer.appendChild(singleBookItem);
+        
+     
         // add book title
         const titleText = document.createElement ('h1');
         singleBookItem.appendChild(titleText)
         titleText.innerText = bookNameInput.value;
+        titleText.classList.add('title-text'); 
 
         // add writer
-        const writerText = document.createElement ('h2');
+        const writerText = document.createElement ('h1');
         singleBookItem.appendChild(writerText)
         writerText.innerText = writerNameInput.value;
+        writerText.classList.add('writer-text');
 
         // add page number
-        const pageNumber = document.createElement ('h3');
+        const pageNumber = document.createElement ('h1');
         singleBookItem.appendChild(pageNumber)
         pageNumber.innerText = pageNumberInput.value;
+        pageNumber.classList.add('page-number');
+
+        // create button container
+
+        // const buttonContainer = document.createElement('div');
+        // buttonContainer.appendChild(readButton);
+        // buttonContainer.appendChild(deleteButton);
 
         // add delete button
         const deleteButton = document.createElement('button');
@@ -77,7 +90,6 @@ AddNewBook.prototype.getInput = function() {
         });
 
         // read button - read vs unread
-        
         readButton.addEventListener('click', function(){
 
             if(readButton.innerText === 'read') {
@@ -93,7 +105,6 @@ AddNewBook.prototype.getInput = function() {
 
 
         // checkbox checked or not 
-
         if(checkbox.checked == true) {
             readButton.classList.toggle('read')
         } else {
@@ -102,18 +113,16 @@ AddNewBook.prototype.getInput = function() {
         }
         
          // clear input
-
-        //  bookNameInput.value = '';
-        //  writerNameInput.value = '';
-        //  pageNumberInput.value = '';
-        //  checkbox.checked = false;
+         bookNameInput.value = '';
+         writerNameInput.value = '';
+         pageNumberInput.value = '';
+         checkbox.checked = false;
          
     })     
 
   
     
 } 
-
 function ReplicateNewBook() {
     this.name = bookNameInput.value
     this.writer = writerNameInput.value
@@ -128,7 +137,7 @@ anyBook.getInput();
 
 myLibrary.push(anyBook)
 
-console.log(myLibrary);
+console.log(myLibrary); 
 
 
 
