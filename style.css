@@ -1,0 +1,113 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Patrick Hand', cursive;;
+}
+
+body {
+    background-color: #b5bacb;
+}
+
+.title {
+    background-color: #d2d8ed;
+    font-family: 'Fredoka One', cursive;
+    padding: 1rem;
+}
+
+#add-button,
+#submit-button {
+    padding: 0.50rem 1rem;
+    font-size: 1rem;
+    margin: 1rem;
+    /* font-weight: 600; */
+
+}
+
+.checkbox {
+    display: flex;
+    justify-content: space-around;
+}
+
+label {
+    align-self: center;
+    font-size: 1rem;
+}
+
+
+.single-book-item {
+    background-color: #f8afaf;
+    border: 3px solid #d2d8ed;
+    width: 50%;
+    padding: 1rem;
+    margin: 1rem;
+}
+
+.title-text,
+.writer-text,
+.page-number {
+    margin: 0.75rem;
+    text-align: center;
+}
+
+.delete-button,
+.read-button {
+    margin: 0.50rem;
+    padding: 0.50rem;
+
+}
+
+.open-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 50%;
+    margin: 0 auto;
+    padding: 1rem;
+    background-color: #f8afaf;
+    border: 3px solid #d2d8ed;
+    
+}
+.open-form input {
+    padding: 0.75rem;
+    margin: 0.50rem;
+    background-color: #f6ece4;
+    background-color: #ececee;;
+    border-radius: 1rem;
+    font-size: 1rem;
+    
+}
+
+
+
+.close-form {
+display: none;
+
+}
+
+.unread {
+background-color: red;
+}
+
+.read {
+background-color: green;
+}
+
+/* 
+.open-form {
+    display: flex;
+    position: fixed; 
+     left: 45%;
+    top: 5%;
+    justify-content: center;
+    width: 50%;
+    transform: translate(-50%, 5%);
+    border: 3px solid #999999;
+    z-index: 9;
+
+} */
+
+
+.book-container {
+    background-color: aqua;
+}
