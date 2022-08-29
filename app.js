@@ -9,18 +9,18 @@ const pageNumberInput = document.querySelector('#pages')
 const submitButton = document.querySelector('#submit-button')
 const addButton = document.querySelector('#add-button')
 const checkbox = document.querySelector('#checkbox')
-let myLibrary = [];
 
 
-openBookForm();
+addButton.addEventListener('click',openBookForm);
+
 function openBookForm () {
-   
-    addButton.addEventListener('click', function(){
-        bookForm.classList.toggle('open-form')
-        bookForm.classList.remove('close-form')
-    }) 
+    bookForm.classList.toggle('open-form');
+    bookForm.classList.remove('close-form');
 
 }
+
+
+let myLibrary = [];
 
 // prototype and constructor function
 
@@ -31,36 +31,36 @@ AddNewBook.prototype.getInput = function() {
 
     submitButton.addEventListener('click',function(e){
 
+        e.preventDefault();
 
         // display and hide bookForm
         bookForm.classList.remove('open-form');
         bookForm.classList.add('close-form')
 
-
         // create single book container
         const singleBookItem = document.createElement ('div');
+        bookContainer.appendChild(singleBookItem);
         singleBookItem.classList.add('single-book-item')
-      
-     
+
+
         // add book title
         const titleText = document.createElement ('h1');
         singleBookItem.appendChild(titleText)
         titleText.innerText = bookNameInput.value;
-        titleText.classList.add('title-text'); 
+        titleText.classList.add('title-text');
 
         // add writer
-        const writerText = document.createElement ('h1');
+        const writerText = document.createElement ('h2');
         singleBookItem.appendChild(writerText)
         writerText.innerText = writerNameInput.value;
         writerText.classList.add('writer-text');
 
         // add page number
-        const pageNumber = document.createElement ('h1');
+        const pageNumber = document.createElement ('h3');
         singleBookItem.appendChild(pageNumber)
         pageNumber.innerText = pageNumberInput.value;
         pageNumber.classList.add('page-number');
 
-        
         // add delete button
         const deleteButton = document.createElement('button');
         deleteButton.innerText = 'delete';
@@ -81,6 +81,7 @@ AddNewBook.prototype.getInput = function() {
         });
 
         // read button - read vs unread
+        
         readButton.addEventListener('click', function(){
 
             if(readButton.innerText === 'read') {
@@ -96,6 +97,7 @@ AddNewBook.prototype.getInput = function() {
 
 
         // checkbox checked or not 
+
         if(checkbox.checked == true) {
             readButton.classList.toggle('read')
         } else {
@@ -103,17 +105,22 @@ AddNewBook.prototype.getInput = function() {
             readButton.classList.toggle('unread')
         }
         
-         // clear input
-         bookNameInput.value = '';
-         writerNameInput.value = '';
-         pageNumberInput.value = '';
-         checkbox.checked = false;
+        //  clear input
+
+        //  bookNameInput.value = '';
+        //  writerNameInput.value = '';
+        //  pageNumberInput.value = '';
+        //  checkbox.checked = false;
          
+        bookContainer.appendChild(singleBookItem);
+
+        
     })     
 
   
     
 } 
+
 function ReplicateNewBook() {
     this.name = bookNameInput.value
     this.writer = writerNameInput.value
@@ -128,7 +135,4 @@ anyBook.getInput();
 
 myLibrary.push(anyBook)
 
-console.log(myLibrary); 
-
-
-
+console.log(myLibrary);
