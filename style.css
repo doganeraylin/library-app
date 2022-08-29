@@ -1,0 +1,145 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Patrick Hand', cursive;;
+}
+
+body {
+       background-image: url('bg.png')
+}
+
+.title {
+    background-color: #d2d8ed;
+    font-family: 'Fredoka One', cursive;
+    padding: 1.5rem;
+}
+
+.book-container {
+    display: flex;
+    flex-direction: column;
+}
+
+
+#add-button,
+#submit-button {
+    padding: 0.50rem 1rem;
+    font-size: 1rem;
+    margin: 1rem;
+    /* font-weight: 600; */
+
+}
+
+.checkbox {
+    display: flex;
+    justify-content: space-around;
+}
+
+label {
+    align-self: center;
+    margin: 0 1.5rem;
+    font-size: 1rem;
+}
+
+
+.single-book-item {
+    /* background-color: #f8afaf; */
+    background-color: #f6ece4;
+    border: 1px solid #747474;
+    border-radius: 3px;
+    width: 70%;
+    margin: 1rem auto;
+    padding: 1rem;
+    text-align: center;
+    box-shadow: 5px 5px 0px 0px #f8afaf;
+}
+
+
+.title-text,
+.writer-text,
+.page-number {
+    padding: 0.25rem;
+    
+}
+
+.delete-button,
+.read-button {
+    margin: 1.5rem 0.50rem 0;
+    padding: 0.50rem;
+
+}
+
+.submit-container {
+    margin-left: 3.2rem;
+}
+
+.open-form {
+    position: fixed;
+    top: 25%;
+    left: 25%;
+    width: 50%;
+    background-color: #f8afaf;
+    border: 1px solid #696969;
+    border-radius: 3px;
+  
+}
+
+
+.open-form input {
+    padding: 0.75rem;
+    margin: 0.50rem;
+    background-color: #ececee;;
+    border-radius: 1rem;
+    font-size: 1rem;
+    
+}
+
+.close-form {
+display: none;
+
+}
+
+.read,
+.unread {
+    border: none;
+    border: 1px solid grey;
+    border-radius: 4px;
+    padding: 0.50rem;
+}
+
+.unread {
+    background-color: #f8afaf;
+}
+
+.read {
+   background-color: #f6d253 ;
+ 
+}
+
+@media (min-width: 768px) {
+    .book-container {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+    }
+
+    .open-form {
+    position: fixed;
+    top: 40%;
+    left: 25%;
+    width: 50%;
+    background-color: #f8afaf;
+    border: 1px solid #696969;
+    border-radius: 3px;
+    }
+
+    .open-form input {
+        margin: 1rem
+    }
+
+    .checkbox {
+        display: flex;
+        justify-content: space-around;
+    }
+    
+    
+}
