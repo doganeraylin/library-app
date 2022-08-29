@@ -6,14 +6,20 @@
 }
 
 body {
-    background-color: #b5bacb;
+       background-image: url('bg.png')
 }
 
 .title {
     background-color: #d2d8ed;
     font-family: 'Fredoka One', cursive;
-    padding: 1rem;
+    padding: 1.5rem;
 }
+
+.book-container {
+    display: flex;
+    flex-direction: column;
+}
+
 
 #add-button,
 #submit-button {
@@ -31,83 +37,109 @@ body {
 
 label {
     align-self: center;
+    margin: 0 1.5rem;
     font-size: 1rem;
 }
 
 
 .single-book-item {
-    background-color: #f8afaf;
-    border: 3px solid #d2d8ed;
-    width: 50%;
+    /* background-color: #f8afaf; */
+    background-color: #f6ece4;
+    border: 1px solid #747474;
+    border-radius: 3px;
+    width: 70%;
+    margin: 1rem auto;
     padding: 1rem;
-    margin: 1rem;
+    text-align: center;
+    box-shadow: 5px 5px 0px 0px #f8afaf;
 }
+
 
 .title-text,
 .writer-text,
 .page-number {
-    margin: 0.75rem;
-    text-align: center;
+    padding: 0.25rem;
+    
 }
 
 .delete-button,
 .read-button {
-    margin: 0.50rem;
+    margin: 1.5rem 0.50rem 0;
     padding: 0.50rem;
 
 }
 
-.open-form {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    width: 50%;
-    margin: 0 auto;
-    padding: 1rem;
-    background-color: #f8afaf;
-    border: 3px solid #d2d8ed;
-    
+.submit-container {
+    margin-left: 3.2rem;
 }
+
+.open-form {
+    position: fixed;
+    top: 25%;
+    left: 25%;
+    width: 50%;
+    background-color: #f8afaf;
+    border: 1px solid #696969;
+    border-radius: 3px;
+  
+}
+
+
 .open-form input {
     padding: 0.75rem;
     margin: 0.50rem;
-    background-color: #f6ece4;
     background-color: #ececee;;
     border-radius: 1rem;
     font-size: 1rem;
     
 }
 
-
-
 .close-form {
 display: none;
 
 }
 
+.read,
 .unread {
-background-color: red;
+    border: none;
+    border: 1px solid grey;
+    border-radius: 4px;
+    padding: 0.50rem;
+}
+
+.unread {
+    background-color: #f8afaf;
 }
 
 .read {
-background-color: green;
+   background-color: #f6d253 ;
+ 
 }
 
-/* 
-.open-form {
-    display: flex;
-    position: fixed; 
-     left: 45%;
-    top: 5%;
-    justify-content: center;
+@media (min-width: 768px) {
+    .book-container {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+    }
+
+    .open-form {
+    position: fixed;
+    top: 40%;
+    left: 25%;
     width: 50%;
-    transform: translate(-50%, 5%);
-    border: 3px solid #999999;
-    z-index: 9;
+    background-color: #f8afaf;
+    border: 1px solid #696969;
+    border-radius: 3px;
+    }
 
-} */
+    .open-form input {
+        margin: 1rem
+    }
 
-
-.book-container {
-    background-color: aqua;
+    .checkbox {
+        display: flex;
+        justify-content: space-around;
+    }
+    
+    
 }
